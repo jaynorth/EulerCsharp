@@ -19,7 +19,7 @@ namespace problem4
             pb4display.DisplayHeader();
 
 
-            // To make it work I needed long numbers instead of long
+           
 
             int biggestPalindrome = 0;
 

@@ -62,6 +62,12 @@ namespace Display
             Console.WriteLine(text + " " + answer);
         }
 
+        public void DisplayAnswer(string text, long answer)
+        {
+
+            Console.WriteLine(text + " " + answer);
+        }
+
         public void DisplayFooter() {
             DateTime t2 = DateTime.Now;
             
