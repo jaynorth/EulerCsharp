@@ -43,5 +43,10 @@ namespace Display
             Console.WriteLine("*********************************************************************************");
 
         }
+
+        public void DisplayAnswer(string text, int answer ) {
+
+            Console.WriteLine(text + " " + answer);
+        }
     }
 }

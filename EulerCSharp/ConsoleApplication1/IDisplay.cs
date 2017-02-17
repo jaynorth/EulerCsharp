@@ -12,6 +12,8 @@ namespace Display
         string ProblemTitle { get; set; }
         string ProblemHeader { get; set; }
         string Description { get; set; }
+        void DisplayHeader();
+        void DisplayAnswer(string text, int answer);
 
     }
 }
