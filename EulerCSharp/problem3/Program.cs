@@ -18,26 +18,25 @@ namespace problem3
             pb3display.Description = "The prime factors of 13195 are 5, 7, 13 and 29.\n What is the largest prime factor of the number 600851475143 ?";
             pb3display.DisplayHeader();
 
-            DateTime t1 = DateTime.Now;
             
+            // To make it work I needed long numbers instead of long
 
             long number = 600851475143; //600851475143 13195
 
-            List<int> List = PrimeFactors.PrimeFactorNumbers(number);
-            //PrimeFactors.ReadList(List);
+            List<long> List = PrimeFactors.PrimeFactorNumbers(number);
+          
             try
             {
                 Console.WriteLine("Largest Prime Factor for " + number + " is : " + List.Max());
-                DateTime t2 = DateTime.Now;
-                Console.WriteLine("Timer : " + (t2 - t1));
+                
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine("There was an error: " + ex.Message);
             }
-            
 
+            pb3display.DisplayFooter();
             Console.ReadKey();
         }
     }

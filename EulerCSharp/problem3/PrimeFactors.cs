@@ -10,23 +10,23 @@ namespace problem3
     {
 
 
-        public static List<int> PrimeFactorNumbers(long number) {
+        public static List<long> PrimeFactorNumbers(long number) {
 
-            List<int> ListeFactors = new List<int>();
+            List<long> ListeFactors = new List<long>();
 
             bool prime ;
-            int lastPrime=0;
+           
 
          
 
             //Console.WriteLine("new number is " + number);
 
-            for (int i = 3; i*i < number; i = i + 2) {
+            for (long i = 3; i*i < number; i = i + 2) {
                 prime = false;
 
                 if (number % i == 0) {
 
-                    for (int j = 2; j < i; j++) {
+                    for (long j = 2; j < i; j++) {
 
                         if (i % j == 0)
                         {
@@ -36,7 +36,7 @@ namespace problem3
                         }
                         else {
                             prime = true;
-                            lastPrime = i;
+                           
                             
                         }
                     }
@@ -51,8 +51,8 @@ namespace problem3
             return ListeFactors;
         }
 
-        public static void ReadList(List<int> ListeFactors) {
-            foreach (int number in ListeFactors) {
+        public static void ReadList(List<long> ListeFactors) {
+            foreach (long number in ListeFactors) {
                 Console.WriteLine(number);
             }
         }

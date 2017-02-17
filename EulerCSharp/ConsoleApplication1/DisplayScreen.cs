@@ -4,6 +4,12 @@ namespace Display
 {
     public class DisplayScreen : IDisplay
     {
+        DateTime t1;
+        public DisplayScreen()
+        {
+            t1 = DateTime.Now;
+            
+        }
 
         private string _description;
 
@@ -49,14 +55,18 @@ namespace Display
 
         }
 
-        public static DateTime Timestamp() {
-            DateTime time = DateTime.Now;
-            return time;
-        }
+       
 
         public void DisplayAnswer(string text, int answer ) {
 
             Console.WriteLine(text + " " + answer);
+        }
+
+        public void DisplayFooter() {
+            DateTime t2 = DateTime.Now;
+            
+            Console.WriteLine("\nTimer : " + (t2 - t1));
+
         }
     }
 }
