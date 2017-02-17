@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E8800A1-E0C2-4451-A2B1-E259AD048D2F}</ProjectGuid>
+    <ProjectGuid>{350F0DEB-5E19-4761-BFCD-7FB415835649}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Problem1</RootNamespace>
-    <AssemblyName>Problem1</AssemblyName>
+    <RootNamespace>Problem2</RootNamespace>
+    <AssemblyName>Problem2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Multiples.cs" />
+    <Compile Include="Fibonacci.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApplication1\Display.csproj">
-      <Project>{8d57dae9-ea3a-455a-9e43-131e1efdd98d}</Project>
+      <Project>{8D57DAE9-EA3A-455A-9E43-131E1EFDD98D}</Project>
       <Name>Display</Name>
     </ProjectReference>
   </ItemGroup>

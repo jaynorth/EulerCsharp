@@ -10,7 +10,7 @@ namespace Display
         public string Description
         {
             get { return _description; }
-            set { _description = value; }
+            set { _description = value;} 
         }
 
 
@@ -35,13 +35,23 @@ namespace Display
 
         public void DisplayHeader( ) {
             //Console.SetWindowSize(80, 40);
-            Console.WriteLine(ProblemTitle );
+            Console.WriteLine(ProblemTitle + "\n" );
             Console.WriteLine();
             Console.WriteLine(ProblemHeader);
+            
             Console.WriteLine("*********************************************************************************");
-            Console.WriteLine(Description);
+            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n" + Description + "\n");// new line
+            Console.ResetColor();
             Console.WriteLine("*********************************************************************************");
+           
 
+        }
+
+        public static DateTime Timestamp() {
+            DateTime time = DateTime.Now;
+            return time;
         }
 
         public void DisplayAnswer(string text, int answer ) {

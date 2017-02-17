@@ -20,8 +20,8 @@ namespace Problem1
 
             int s = Multiples.SumOfMultiples(3, 5, 1000);
             pb1display.DisplayAnswer("the total sum of multiples is", s);
-           
 
+            DisplayScreen.Timestamp();
             Console.ReadKey();
 
         }
