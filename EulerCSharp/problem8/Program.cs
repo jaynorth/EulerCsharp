@@ -25,15 +25,15 @@ namespace problem8
 
             string line = StreamProcess.ConvertToString(sr);
             //Console.WriteLine("converted string : " + line);
-            long[] tab = StringProducts.BiggestProduct(4, line);
+            long[] tab = StringProducts.BiggestProduct(13, line);
             int count = 0;
             foreach (long n in tab) {
                 count++;
                 Console.WriteLine("item "+ count +" : " + n + " ");
             }
 
-
-
+            /////////////////////////////////////////////////////////////////
+            // For this to Work you need to work with long type not int
 
             /////////////////////////////////////////////////////////////////
             pb8display.DisplayFooter();
