@@ -34,7 +34,6 @@ namespace problem7
                 
                 if (isprime) {
                     count++;
-                    //Console.WriteLine("count is : " + count);
                     i = i + 2;
                 }
             }
