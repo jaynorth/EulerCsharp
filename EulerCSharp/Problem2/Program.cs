@@ -27,7 +27,7 @@ namespace Problem2
             
             //Console.WriteLine("Fibonaaci sum for term " + term + " is " + a);
             pb2display.DisplayAnswer("Fibonacci sum for even numbers under 4000000 is : ", total);
-            DisplayScreen.Timestamp();
+            
             Console.ReadKey();
         }
     }

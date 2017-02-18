@@ -33,8 +33,8 @@ namespace problem8
             }
 
             /////////////////////////////////////////////////////////////////
-            // For this to Work you need to work with long type not int
-
+            //  For this to Work you need to work with long type not int
+            //
             /////////////////////////////////////////////////////////////////
             pb8display.DisplayFooter();
             Console.ReadKey();
