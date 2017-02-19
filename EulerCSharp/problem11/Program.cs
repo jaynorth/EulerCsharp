@@ -34,8 +34,8 @@ namespace problem11
 
             long productRight = Grid.BiggestProductRight(grid, 4);
             Console.WriteLine("\nProduct is :" + productRight);
-            //long productDown = Grid.BiggestProductDown(grid, 4);
-            //Console.WriteLine("\nProduct is :" + productDown);
+            long productDown = Grid.BiggestProductDown(grid, 4);
+            Console.WriteLine("\nProduct is :" + productDown);
 
 
             sr.Close();
