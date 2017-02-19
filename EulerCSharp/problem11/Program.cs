@@ -36,7 +36,8 @@ namespace problem11
             Console.WriteLine("\nProduct is :" + productRight);
             long productDown = Grid.BiggestProductDown(grid, 4);
             Console.WriteLine("\nProduct is :" + productDown);
-
+            long productDiagLeft = Grid.BiggestProductDiagonalLeft(grid, 4);
+            Console.WriteLine("\nProduct is :" + productDiagLeft);
 
             sr.Close();
             // pb11display.DisplayAnswer("Prime number " + order + " is  :", result);

@@ -94,5 +94,34 @@ namespace problem11
 
             return biggestProduct;
         }
+
+        public static long BiggestProductDiagonalLeft(string[,] grid, int adjacentNumbers)
+        {   //table [row][colum]
+            long product = 1;
+            int number;
+            long biggestProduct = 0;
+            int lengthRow = 20;
+            for (int k = 0; k < lengthRow - adjacentNumbers; k++)
+            {
+                for (int j = 0; j <=lengthRow - adjacentNumbers; j++)
+                {
+                    for (int i = 0; i < adjacentNumbers; i++)
+                    {
+                        number = int.Parse(grid[i + j, i+k]);
+                        //[0,0][1, 1][2,2][3,3]
+                        //[1,0][2,1][3,2][4,3]
+                        //[2, 0][3,1][4, 2][5, 3]
+
+                        product *= number;
+                    }
+                    if (product > biggestProduct) { biggestProduct = product; }
+                    product = 1;
+                }
+            }
+            
+            return biggestProduct;
+        }
+
+
     }
 }
