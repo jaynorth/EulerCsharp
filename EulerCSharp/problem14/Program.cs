@@ -22,7 +22,7 @@ namespace problem14
             long startingNumber=0;
             long steps =0;
             int limit = 1000000;
-            long[] table = new long[limit/10+1];//no need to have a bigger table I suppose
+            long[] table = new long[limit/2+1];//no need to have a bigger table I suppose, halfway the limit is the fastest
             long biggestChain = 0;
 
 
