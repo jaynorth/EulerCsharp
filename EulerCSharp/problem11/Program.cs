@@ -30,16 +30,23 @@ namespace problem11
             string[,] grid = Grid.PopulateArrayFromStream2D(20, sr);
             
             Grid.DisplayGrid(grid);
+            long biggestProduct = 0;
             //Console.WriteLine(grid[2, 2]);
 
             long productRight = Grid.BiggestProductRight(grid, 4);
-            Console.WriteLine("\nProduct is :" + productRight);
+           // Console.WriteLine("\nProduct is :" + productRight);
             long productDown = Grid.BiggestProductDown(grid, 4);
-            Console.WriteLine("\nProduct is :" + productDown);
+            //Console.WriteLine("\nProduct is :" + productDown);
             long productDiagLeft = Grid.BiggestProductDiagonalLeft(grid, 4);
-            Console.WriteLine("\nProduct is :" + productDiagLeft);
+            //Console.WriteLine("\nProduct is :" + productDiagLeft);
+            long productDiagRight = Grid.BiggestProductDiagonalRight(grid, 4);
+            //Console.WriteLine("\nProduct is DiagRight:" + productDiagRight);
 
             sr.Close();
+
+            biggestProduct = Grid.BiggestProduct(productRight, productDown, productDiagLeft, productDiagRight);
+
+            Console.WriteLine("\n\nTHE BIGGEST PRODUCT IS : " + biggestProduct);
             // pb11display.DisplayAnswer("Prime number " + order + " is  :", result);
 
             pb11display.DisplayFooter();
