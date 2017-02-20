@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D25A77F-B1D0-4A84-BF97-2DC4474AC3EC}</ProjectGuid>
+    <ProjectGuid>{1A1EF173-D4BE-4A38-A35E-0D533636267D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>problem8</RootNamespace>
-    <AssemblyName>problem8</AssemblyName>
+    <RootNamespace>problem13</RootNamespace>
+    <AssemblyName>problem13</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,13 +46,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="StreamProcess.cs" />
-    <Compile Include="StringProducts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -61,16 +55,13 @@
       <Project>{8D57DAE9-EA3A-455A-9E43-131E1EFDD98D}</Project>
       <Name>Display</Name>
     </ProjectReference>
+    <ProjectReference Include="..\problem8\problem8.csproj">
+      <Project>{0d25a77f-b1d0-4a84-bf97-2dc4474ac3ec}</Project>
+      <Name>problem8</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\numberTable.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Content Include="LargeSum.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

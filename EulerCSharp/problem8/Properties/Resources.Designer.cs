@@ -61,7 +61,7 @@ namespace problem8.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to numberTable.txt.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string File {
             get {

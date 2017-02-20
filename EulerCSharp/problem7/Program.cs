@@ -19,8 +19,6 @@ namespace problem7
 
             //////////////////////////////////////////////////////////////////
 
-
-
             int order = 10001;
             
             int result = PrimeNumberOrder.PrimeNumberST(order);

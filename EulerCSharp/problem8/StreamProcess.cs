@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace problem8
 {
-    class StreamProcess
+    public class StreamProcess
     {
 
         public static void DisplayFile(string filePath) {
