@@ -24,15 +24,93 @@ namespace Problem17
             { 
              { 1, "one" },{ 2, "two"},{ 3, "three"},{ 4, "four"}, { 5, "five"},
              { 6, "six"}, { 7, "seven"},{ 8, "eight"}, { 9, "nine"},
-             { 10, "ten"},{ 11, "eleven"},{ 12, "twelve"},{ 13, "13"},
+             { 10, "ten"},{ 11, "eleven"},{ 12, "twelve"},{ 13, "thirteen"},
              { 14, "fourteen"},{ 15, "fifteen"},{ 16, "sixteen"},{ 17, "seventeen"},
              { 18, "eighteen"},{ 19, "nineteen"},{ 20, "twenty"},{ 30, "thirty"},
              { 40, "fourty"},{ 50, "fifty"},{ 60, "sixty"},{ 70, "seventy"},
              { 80, "eighty"},{ 90, "ninety"},{ 100, "hundred"},{ 1000, "thousand"}
             };
             string s = "";
-            dictionary.TryGetValue(80, out s);
-            Console.WriteLine(s);
+            string and = "and";
+     
+            
+            int remainder;
+
+            int lettersSum = 0;
+
+            for (int i = 1; i <= 1000; i++) {
+                if (i > 19 && i % 10 != 0 && i < 100)
+                {
+                    remainder = i % 10;
+                    dictionary.TryGetValue(i - remainder, out s);
+                    lettersSum += s.Length;
+                    dictionary.TryGetValue(remainder, out s);
+                    lettersSum += s.Length;
+                }
+                else if (i > 19 && i % 10 == 0 && i < 91)
+                {
+              
+                    dictionary.TryGetValue(i, out s);
+                    lettersSum += s.Length;
+                }
+             
+
+                else if (i == 1000)
+                {
+                    dictionary.TryGetValue(1, out s);
+                    lettersSum += s.Length;
+                    dictionary.TryGetValue(1000, out s);
+                    lettersSum += s.Length;
+                }
+                else if (i >= 100 && i < 1000)
+                {
+                    if (i % 100 == 0 && i < 1000)
+                    {
+                        dictionary.TryGetValue(i / 100, out s);
+                        lettersSum += s.Length;
+                        dictionary.TryGetValue(100, out s);
+                        lettersSum += s.Length;
+                    }
+                    else if (i % 100 != 0 && i>100)
+                    {
+                        remainder = i % 100;
+                        dictionary.TryGetValue((i - remainder) / 100, out s);
+                        lettersSum += s.Length;
+                        dictionary.TryGetValue(100, out s);
+                        lettersSum += s.Length;
+                        lettersSum += and.Length;
+                        if (remainder % 10 == 0)
+                        {
+                            dictionary.TryGetValue(remainder, out s);
+                            lettersSum += s.Length;
+                        }
+                        else if (remainder > 10)
+                        {
+                            dictionary.TryGetValue(remainder - (remainder % 10), out s);
+                            lettersSum += s.Length;
+                            dictionary.TryGetValue(remainder % 10, out s);
+                            lettersSum += s.Length;
+                        }
+                        else {
+                            dictionary.TryGetValue(remainder, out s);
+                            lettersSum += s.Length;
+                        }
+
+                    }
+                }
+
+
+                else
+                {
+                    dictionary.TryGetValue(i, out s);
+                    lettersSum += s.Length;
+
+                }
+
+            }
+
+
+            Console.WriteLine("Total number of letters used is : "+lettersSum);
             //foreach (KeyValuePair<int, string> pair in dictionary)
             //{
             //    Console.WriteLine("{0}, {1}", pair.Key, pair.Value);
