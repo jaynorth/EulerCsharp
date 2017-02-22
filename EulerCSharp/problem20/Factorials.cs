@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace problem20
 {
-    class Factorials
+    public class Factorials
     {
         public static long result=1;
         public static BigInteger bigResult = 1;

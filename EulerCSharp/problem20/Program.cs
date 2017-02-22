@@ -23,7 +23,7 @@ namespace problem20
             int factorialNumber = 100;
             double sum;
             // To make it work it requires to use BigInteger after adding System.Numerics namespace
-            BigInteger f = factorialNumber;
+           
             BigInteger factorialResult = 0;
 
             factorialResult = Factorials.BigFactorial(factorialNumber);
