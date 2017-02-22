@@ -8,7 +8,8 @@ namespace Display
         public DisplayScreen()
         {
             t1 = DateTime.Now;
-            
+            Console.BufferHeight = short.MaxValue - 1; // ***** Alters the BufferHeight *****
+
         }
 
         private string _description;
