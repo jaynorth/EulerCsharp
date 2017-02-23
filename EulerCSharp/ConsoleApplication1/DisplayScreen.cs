@@ -42,7 +42,7 @@ namespace Display
 
 
         public void DisplayHeader( ) {
-            //Console.SetWindowSize(80, 40);
+            Console.SetWindowSize(100, 40);
             
             
             Console.WriteLine("{0}\n",ProblemTitle   );
@@ -52,14 +52,17 @@ namespace Display
             Console.WriteLine("#  {0}  #", ProblemHeader);
             Console.WriteLine(s);
             Console.WriteLine("\n");
-            string d = new string('*', 80);
+            string d = new string('*', 100);
+            
             Console.WriteLine(d);
-            //Console.BackgroundColor = ConsoleColor.DarkMagenta;
-            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.BackgroundColor = ConsoleColor.Blue;
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("{0}\n",Description );
             Console.ResetColor();
             Console.WriteLine(d);
-           
+            
+
 
         }
 
