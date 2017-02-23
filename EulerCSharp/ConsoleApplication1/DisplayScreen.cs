@@ -9,7 +9,8 @@ namespace Display
         {
             t1 = DateTime.Now;
             Console.BufferHeight = short.MaxValue - 1; // ***** Alters the BufferHeight *****
-
+                                                       // Console.BufferWidth = short.MaxValue - 1;
+            //Console.WindowWidth = 500;
         }
 
         private string _description;
@@ -42,16 +43,22 @@ namespace Display
 
         public void DisplayHeader( ) {
             //Console.SetWindowSize(80, 40);
-            Console.WriteLine(ProblemTitle + "\n" );
-            Console.WriteLine();
-            Console.WriteLine(ProblemHeader);
             
-            Console.WriteLine("*********************************************************************************");
-            Console.BackgroundColor = ConsoleColor.DarkMagenta;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n" + Description + "\n");// new line
+            
+            Console.WriteLine("{0}\n",ProblemTitle   );
+            string s = new string('#', ProblemHeader.Length + 6);
+            Console.WriteLine(s);
+            
+            Console.WriteLine("#  {0}  #", ProblemHeader);
+            Console.WriteLine(s);
+            Console.WriteLine("\n");
+            string d = new string('*', 80);
+            Console.WriteLine(d);
+            //Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("{0}\n",Description );
             Console.ResetColor();
-            Console.WriteLine("*********************************************************************************");
+            Console.WriteLine(d);
            
 
         }
