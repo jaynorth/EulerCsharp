@@ -46,11 +46,14 @@ namespace Display
             
             
             Console.WriteLine("{0}\n",ProblemTitle   );
+          
             string s = new string('#', ProblemHeader.Length + 6);
             Console.WriteLine(s);
             
             Console.WriteLine("#  {0}  #", ProblemHeader);
+            
             Console.WriteLine(s);
+
             Console.WriteLine("\n");
             string d = new string('*', 100);
             
@@ -81,9 +84,9 @@ namespace Display
 
         public void DisplayFooter() {
             DateTime t2 = DateTime.Now;
-            
-            Console.WriteLine("\nTimer : " + (t2 - t1));
-
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\n\tTimer : " + (t2 - t1));
+            Console.ResetColor();
         }
     }
 }
