@@ -13,7 +13,7 @@ namespace problem23
             List<long> abundantList = new List<long>();
 
             long sum;
-            for (int i = 12; i < limit; i=i+2) {
+            for (int i = 1; i < limit; i++) {
                 sum = 0;
                 for (int j = 1; j <= i / 2; j++) {
                     if (i % j == 0) {
@@ -21,47 +21,66 @@ namespace problem23
                     }
                 }
 
-                if (sum > i && sum<28123)
+                if (sum > i && sum<limit)
                 {
                     abundantList.Add(i);
-                    //Console.Write(" abundant:" + i);
                 }
-    
             }
 
             return abundantList;
         }
 
-        public static void DisplayList(List<int> list) {
-
-            foreach (int item in list) {
-                Console.Write(" {0} ", item);
+        public static void DisplayList(List<long> list) {
+            int count = 0;
+            foreach (long item in list) {
+                Console.Write(" number: {0} index:{1} ", item, count);
+                count++;
             }
         }
 
-        public static List<long> MakeSumOf2abundantNumbersList(List<long> list)
+        public static bool[] MakeSumOf2abundantNumbersList(List<long> list,int limit)
         {
             long sum;
-            int limit = 28123;
+            bool[] IsSumAbundant = new bool[limit + 1];
+            
+            
             int count = list.Count;
-            List<long> SumabundantList = new List<long>();
 
-            Console.WriteLine("count "+ count);
+            for (int i = 0; i < count; i++) {
 
-            for (int i = 0; i < (count-i); i++) {
-                for (int j = i; j < count-j; j++) {
+                for (int j = i; j < count; j++) {
+                   
                     sum = list[i] + list[j];
-                    if (sum < limit && SumabundantList.Contains(sum)==false) {
-                        SumabundantList.Add(sum);
-                        Console.Write(sum + " ");
-                        
+
+                    if (sum <= limit )
+                    {
+
+                        IsSumAbundant[sum] = true;                     
+
                     }
-                    sum = 0;
+                    else {
+                        break;
+                    }
+                    
                 }
-                count--;
             }
 
-            return SumabundantList;
+            return IsSumAbundant;
+        }
+
+        internal static long NonSumOf2AbundantList(bool[] isAbundantArray)
+        {
+            long sum = 0;
+            for (int i = 1; i < (isAbundantArray.Length); i++)
+            {
+
+                if (isAbundantArray[i] == false)
+                {
+                    sum += i;
+                }
+            }
+
+            return sum;
         }
     }
 }

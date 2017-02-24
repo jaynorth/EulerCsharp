@@ -22,24 +22,11 @@ namespace problem23
             int limit = 28123;//28123;
 
             List<long> list = NonAbundantSums.MakeabundantNumbersList(limit);
-
             //NonAbundantSums.DisplayList(list);
-            List<long> list2 = new List<long>();
-            list2 = NonAbundantSums.MakeSumOf2abundantNumbersList(list);
-            
-            //NonAbundantSums.DisplayList(list2);
-            long sum = 0;
-            for (int i = 1; i < 28123; i++) {
-                if (list2.Contains(i) == false) {
-                    sum += i;
-                }
-            }
+            bool[] isSumAbundant = NonAbundantSums.MakeSumOf2abundantNumbersList(list, limit);
+            long sum = NonAbundantSums.NonSumOf2AbundantList(isSumAbundant);
 
-            Console.WriteLine("solution answer is " + sum);
-            //
-            //NonAbundantSums.NonSumOf2AbundantList(list);
-            //
-            //NonAbundantSums.SumOfNon2abundant(list);
+            Console.WriteLine("sum of all numbers not able to be summed by two abundant numbers under {0} \nis {1} ",limit,sum);
 
 
             //////////////////////////////////////////////////////////////////
