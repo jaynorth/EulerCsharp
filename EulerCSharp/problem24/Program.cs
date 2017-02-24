@@ -19,25 +19,32 @@ namespace problem24
             pb23display.DisplayHeader();
 
             //////////////////////////////////////////////////////////////////
-            // string filePath=@""
-            //StreamReader sr = new StreamReader();
+            // More info on implemented algorithm on Wikipedia
+            // https://en.wikipedia.org/wiki/Permutation
             //////////////////////////////////////////////////////////////////
-            //string[] items = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-            List<string> lexicoList = new List<string>();
-            string[] items = new string[] { "1", "2", "3","4", "5", "6", "7" };//, "4", "5", "6", "7", "8", "9" };//,"3"};
 
-          
-
-            int NumberItems = items.Length;//number of numbers to be permuted
-            long possiblePermutations = Factorials.Factorial(NumberItems);
-            Console.WriteLine("Number of possible permutations: {0}", possiblePermutations);
+            int[] items = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int size = items.Length;
+            int limit = 1000000;
             int count = 1;
-            List<string> list1 = new List<string>();
+            long possiblePermutations = Factorials.Factorial(size);
+            Console.WriteLine("possible permutations :{0}\n", possiblePermutations);
+            int k = 0;
+            int l;
 
-             list1 =    Permutations.LexicographicOrderPermutations(items);
-      
-            Permutations.DisplayList(Permutations.LexographicList);
-          
+            while (count!=limit)
+            {
+                k = Permutations.FindK(items);
+                l = Permutations.FindL(items, k);
+                Permutations.SwapValues(k, l, items);
+                Permutations.ReverseSeq(items, k);
+                count++;
+               
+                
+            }
+
+            Console.Write("Permutation number {0}:   ", count);
+            Permutations.DisplayArray(items);
 
             //////////////////////////////////////////////////////////////////
 
