@@ -34,24 +34,10 @@ namespace problem24
             int count = 1;
             List<string> list1 = new List<string>();
 
-
-          
-
              list1 =    Permutations.LexicographicOrderPermutations(items);
       
-
-
-      
-            
-
             Permutations.DisplayList(Permutations.LexographicList);
-            //foreach (string lexico in Permutations.LexographicList) {
-            //    Console.WriteLine("Sequence {0}: {1}", count, lexico);
-            //    count++;
-            //}
-
-            //Permutations.PermutationsToArray(string[] items);
-            
+          
 
             //////////////////////////////////////////////////////////////////
 
