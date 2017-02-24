@@ -38,6 +38,20 @@ namespace problem20
             return result;
         }
 
+        public static long Factorial(long number)
+        {
+            if (number == 1)
+            {
+                return result;
+            }
+            else
+            {
+                result *= number * Factorial(number - 1);
+            }
+
+            return result;
+        }
+
         public static double SumNumbers(BigInteger number) {
             string s = number.ToString();
             double sum = 0;
