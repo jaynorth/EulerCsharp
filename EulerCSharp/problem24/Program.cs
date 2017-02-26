@@ -34,6 +34,7 @@ namespace problem24
 
             while (count!=limit)
             {
+                //Implementing Generation in lexicographic order
                 k = Permutations.FindK(items);
                 l = Permutations.FindL(items, k);
                 Permutations.SwapValues(k, l, items);
