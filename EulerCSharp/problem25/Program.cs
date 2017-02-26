@@ -21,30 +21,14 @@ namespace problem25
             pb25display.DisplayHeader();
 
             //////////////////////////////////////////////////////////////////
-            long term = 100000000;
-            
-            long[] fibonArray = new long[term + 1];
-            long f=0;
-            long numberDigits=0;
-            int limit = 10;
-            int i = 0;
-            while (numberDigits < limit)
 
-            {
-                i++;
-                Fibonacci._fibonTotal = 0;
-                    Fibonacci.FibonBig(i, fibonArray);
-                    f = fibonArray[i];
-                    
-                    numberDigits = Fibonacci.ReturnNumberDigits(f);
-                    
-                  
 
-            }
+            BigInteger fib1 = 1;//base case for index 1
+            BigInteger fib2 = 1;//base case for index 2
+            BigInteger limit = 1000;//number of digits
 
-            Console.Write("F({0}) is {1} |", i, f);
-            Console.WriteLine(" Number of Digits: {0}", numberDigits);
-
+            BigInteger fib3 = Fibonacci.fibDigitLimit(fib1, fib2, limit);
+            Console.WriteLine("Fibonacci index  is: {0} for first Fibonacci number of {1} digits",fib3, limit);
 
 
 
@@ -56,5 +40,7 @@ namespace problem25
             pb25display.DisplayFooter();
             Console.ReadKey();
         }
+
+     
     }
 }

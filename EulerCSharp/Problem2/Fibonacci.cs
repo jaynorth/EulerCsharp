@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,8 @@ namespace Problem2
     public class Fibonacci
     {
 
-        public static int Fibon(int term) {
+        public static int Fibon(int term)
+        {
             int sum = 0;
             if (term == 1)
             {
@@ -20,12 +22,12 @@ namespace Problem2
             {
                 sum = 2;
             }
-            else 
+            else
             {
                 sum += Fibon(term - 1) + Fibon(term - 2);
             }
-          
-        
+
+
             return sum;
         }
 
@@ -51,50 +53,34 @@ namespace Problem2
             return total;
         }
 
-        public static long _fibonTotal { get;  set; } = 0;
-
-        public static long FibonBig(long term, long[] fibonArray) {
-
-            _fibonTotal = 0;
-
-            if (fibonArray[term] != 0) {
-                _fibonTotal += fibonArray[term];
-                return _fibonTotal;
-            }
 
 
-            else if (term == 2)
-            {
-                fibonArray[2] = 1;
-                _fibonTotal += 1;
-                
-
-            }
-            else if (term == 1)
-            {
-                fibonArray[1] = 1;
-                _fibonTotal += 1;
-             
-            }
-
-            else
-            {
-
-                _fibonTotal += FibonBig(term - 1, fibonArray) + FibonBig(term - 2, fibonArray);
-            }
-
-            fibonArray[term] = _fibonTotal;
-            
-            return _fibonTotal;
-        }
-
-        public static int ReturnNumberDigits(long number) {
+        public static int ReturnNumberDigits(long number)
+        {
             string digits;
             digits = number.ToString();
 
             return digits.Length;
         }
 
-       
+        public static BigInteger fibDigitLimit(BigInteger fib1, BigInteger fib2, BigInteger limit)
+        {
+            BigInteger counter = 2;
+            BigInteger fib3 = 0;
+            while (fib3.ToString().Length < limit) {
+                fib3 = fib1 + fib2;
+
+                fib1 = fib2;
+                fib2 = fib3;
+                counter++;
+            }
+
+            Console.WriteLine("Fibonacci number :\n {0}\n",fib3);
+
+            return counter;
+
+        }
+
+
     }
 }
